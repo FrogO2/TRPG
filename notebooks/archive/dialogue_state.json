@@ -1,0 +1,40 @@
+{
+  "default_order": [
+    "gm",
+    "human_player",
+    "llm_player_1",
+    "llm_player_2",
+    "llm_player_3"
+  ],
+  "current_order": [
+    "gm",
+    "human_player",
+    "llm_player_1",
+    "llm_player_2",
+    "llm_player_3"
+  ],
+  "active_speaker": "human_player",
+  "round": 12,
+  "turn_index": 1,
+  "temporary_order": [],
+  "temporary_reason": "",
+  "pending_interrupts": [
+    {
+      "actor_id": "llm_player_2",
+      "reason": "请求对遗迹入口与周围环境进行初步探索与环境扫描的许可与指导"
+    },
+    {
+      "actor_id": "llm_player_3",
+      "reason": "请求对环境进行初步扫描与评估的许可与指导"
+    },
+    {
+      "actor_id": "llm_player_1",
+      "reason": "请求在开始正式探索前进行环境扫描与装备确认"
+    },
+    {
+      "actor_id": "human_player",
+      "reason": "请进行环境扫描与评估，以评估潜在的危险与可利用的资源。"
+    }
+  ],
+  "last_completed_speaker": "gm"
+}

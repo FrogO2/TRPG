@@ -1,0 +1,23 @@
+# Core document conversion
+chandra-ocr[hf]
+
+# LLM orchestration (Phase 1+)
+langgraph
+langchain
+langchain-core
+langchain-openai
+
+# RAG / document retrieval (Phase 1+)
+llama-index-core
+llama-index-embeddings-openai
+llama-index-embeddings-huggingface
+llama-index-readers-file
+
+# Utilities
+beautifulsoup4
+python-dotenv
+
+# Local web UI
+fastapi
+uvicorn
+jinja2

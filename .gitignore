@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+**/__pycache__/
+.idea/
+
+# GitHub blocks files over 100 MB in normal repositories.
+raw/龙之君王的奥德赛 v1.0.pdf
