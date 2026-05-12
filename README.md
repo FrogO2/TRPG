@@ -1,6 +1,6 @@
 # TRPG
 
-一个本地运行的 TRPG 多代理实验项目，包含 GM / 玩家对话运行时、规则检索代理，以及命令行入口。
+一个本地运行的 TRPG 多代理实验项目，包含 GM / 玩家对话运行时、规则检索代理、命令行入口。
 
 ## 环境准备
 
@@ -17,25 +17,26 @@ python -m pip install -r requirements.txt
 
 ## 配置 OPENAI_API_KEY
 
-运行带 LLM 的 CLI 命令前，至少需要设置一个可用的 API key。最简单的方式是设置 `OPENAI_API_KEY`。
+运行带 LLM 的 CLI 命令前，至少需要设置一个可用的 API key。最简单的方式是设置环境变量 `OPENAI_API_KEY`。
 
-Windows PowerShell:
+如果你还没有可用 key，建议直接去阿里云百炼注册：
 
-```powershell
-$env:OPENAI_API_KEY = "你的_api_key"
-```
+1. 打开 https://bailian.console.aliyun.com/
+2. 注册或登录阿里云账号
+3. 在百炼控制台创建并复制 API Key并设置在环境变量中。
 
-如果你使用兼容 OpenAI 的第三方端点，也可以额外设置：
-
-```powershell
-$env:TRPG_OPENAI_BASE_URL = "https://your-compatible-endpoint/v1"
-```
-
-项目里的 GM、玩家和规则检索默认都会读取这些环境变量；如果没有设置，会在运行时直接报错并提示缺少 key。
+项目默认使用`deepseek-v4-flash`模型，阿里云百炼拥有一些免费额度供测试。
 
 ## CLI 用法
 
 CLI 入口是 `trpg_cli.py`。
+
+
+Quick Start：
+
+```powershell
+python .\trpg_cli.py playtest --reset --turns 10
+```
 
 查看全部命令：
 
@@ -82,26 +83,8 @@ python .\trpg_cli.py notebook-search gm human_player events "遗迹"
 python .\trpg_cli.py notebook-update gm human_player events "队伍抵达遗迹入口" --mode append
 ```
 
-快速跑一段 playtest：
-
-```powershell
-python .\trpg_cli.py playtest --reset --turns 10
-```
-
 进入交互模式：
 
 ```powershell
 python .\trpg_cli.py repl
 ```
-
-## requirements 说明
-
-当前 `requirements.txt` 已覆盖代码里的直接运行时依赖，包括：
-
-- LangGraph / LangChain 运行时
-- LlamaIndex 检索与 embedding 适配
-- `openai` 客户端
-- Chandra OCR
-- FastAPI 相关依赖
-
-其中 `openai` 被显式列出，是因为检索模块会直接导入该包，而不应该只依赖 `langchain-openai` 的传递依赖。
