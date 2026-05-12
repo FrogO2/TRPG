@@ -3,5 +3,14 @@ __pycache__/
 **/__pycache__/
 .idea/
 
+# Local-only project notes and drafts
+*implementation_plan*
+*report_draft*
+proposal*
+
+# Large source materials and optional app surface
+raw/
+web/
+
 # GitHub blocks files over 100 MB in normal repositories.
 raw/龙之君王的奥德赛 v1.0.pdf

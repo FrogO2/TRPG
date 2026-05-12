@@ -6,6 +6,7 @@ langgraph
 langchain
 langchain-core
 langchain-openai
+openai
 
 # RAG / document retrieval (Phase 1+)
 llama-index-core
